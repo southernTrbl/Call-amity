@@ -144,7 +144,7 @@ def suggest(request, did):
 	except IndexError:
 		hosp = 'Null'
 		place = Center.objects.create()
-		place.name = 'null'
+		place.name = 'No police station nearby'
 		place.vicinity = 'null'
 		hospital_arr.append(place)
 		hosp = hospital_arr[0]
@@ -153,11 +153,11 @@ def suggest(request, did):
 		pol = police_arr[0]
 	except IndexError:
 		place = Center.objects.create()
-		place.name = 'null'
+		place.name = 'No police station nearby'
 		place.vicinity = 'null'
 		police_arr.append(place)
 		pol = police_arr[0]
-		print("Hospital not found")
+		print("Police station not found")
 	message = 'A disaster ' + str(event.name) + ' has struck your locality. Kindly be careful.' + ' Description ' + str(
 		event.description) + ' The nearest hospital is: ' + str(hosp.name) + '  at : ' + str(
 		hosp.vicinity) + ' Nearest Police Station ' + pol.name + ' at : ' + pol.vicinity + '  Thank You'
