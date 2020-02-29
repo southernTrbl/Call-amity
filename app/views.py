@@ -168,7 +168,7 @@ def suggest(request, did):
 	print()
 	print()
 	print(spontitMsg)
-	#send_sms(message, number)
+	send_sms(message, number)
 	return render(request, 'suggest.html', {'hosp': hospital_arr, 'pol': police_arr, 'did': did})
 
 	arr = Center.objects.all()
