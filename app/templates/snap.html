@@ -59,7 +59,12 @@
 		box-shadow: 0 0 10px 0 rgb(114, 166, 235) inset, 0 0 10px 4px rgb(101, 167, 230);
 	}
 
-	
+
+	.alert-warning-yellow {
+	  color: #E9EDEF;
+	  background-color: rgba(166, 243, 135, 0.88);
+	  border-color: rgba(8, 138, 84, 0.88); }
+
 	.alert-warning-green {
 	  color: #E9EDEF;
 	  background-color: rgba(166, 243, 135, 0.88);
@@ -226,21 +231,21 @@
 				if (text["found"] == "True") {
 					console.log('text:' + text);
 					document.getElementById('alerts').innerHTML =
-						'<div class="alert alert-warning-red text-uppercase" style="color: black;font-size:28px; font-weight: 500;">' +
+						'<div class="alert alert-warning-red" style="color: black;font-size:28px; font-weight: 500;">' +
 						'<center>Relief already handed out!</center>' +
 						'</div>'
 				}
 				if (text["found"] == "False") {
 					console.log('text:' + text);
 					document.getElementById('alerts').innerHTML =
-						'<div class="alert alert-warning text-uppercase" style="color: black;font-size:28px; font-weight: 500;"><center>Face not found!</center>' +
+						'<div class="alert alert-warning-yellow" style="color: black;font-size:28px; font-weight: 500;"><center>Face not found!</center>' +
 						'</div>';
 					document.getElementById('hiddenForm').style.display = 'block';
 				}
 				if (text["found"] == "unknown") {
 					console.log('text:' + text);
 					document.getElementById('alerts').innerHTML =
-					'<div class="alert alert-warning-green text-uppercase" style="color: black;font-size:28px; font-weight: 500;"><center>Hand out Relief!</center>' +
+					'<div class="alert alert-warning-green" style="color: black;font-size:28px; font-weight: 500;"><center>Hand out Relief!</center>' +
 						'</div>';
 					document.getElementById('hiddenForm').style.display = 'block';
 				}

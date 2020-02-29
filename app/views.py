@@ -21,9 +21,9 @@ import os
 from PyDictionary import PyDictionary
 imgname = 'media/pictures/img.jpg'
 
-#spontit details
+#spontit detailsa
 from spontit import SpontitResource
-resource = SpontitResource("ibhanu","WWVKHYFPKRIPA54NHAUWY22YVJFT46XODR79VOPJHZEPFH15MN7361O3UE2BP59A47GCDLNG9LMWBCPNRKNQB6N8H0HDFQ5LIHNT")
+resource = SpontitResource(os.getenv('SPONTIT_NAME'),os.getenv('SPONTIT_KEY'))
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -38,7 +38,7 @@ load_dotenv(dotenv_path=env_path)
 
 
 def heatmap(request):
-	return render(request, 'heatmap.html')
+	return render(request, 'heatmap.html', {'gkey': os.getenv('GOOGLE_KEY')})
 
 
 def get_location(request):
@@ -54,7 +54,7 @@ def get_location(request):
 		print(longitude)
 		return HttpResponseRedirect('/disaster/' + str(event.id))
 	else:
-		return render(request, 'get_location.html')
+		return render(request, 'get_location.html', {'gkey': os.getenv('GOOGLE_KEY')})
 
 
 def disaster_information(request, did):
@@ -87,7 +87,7 @@ def send_sms(message, number):
 
 def suggest(request, did):
 	event = Event.objects.get(id=did)
-	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=2000&types=hospital&key=AIzaSyCUfaNMoMnCyGQGb_H9AqrkxZPDzR63lM0"
+	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=2000&types=hospital&key="+os.getenv('GOOGLE_KEY')
 	response = urllib.request.urlopen(url).read()
 	json_response = json.loads(response)
 	print((type(json_response)))
@@ -113,7 +113,7 @@ def suggest(request, did):
 			hospital_arr.append(place)
 
 	police_arr = []
-	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=2000&types=police&key=AIzaSyCUfaNMoMnCyGQGb_H9AqrkxZPDzR63lM0"
+	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=2000&types=police&key="+os.getenv('GOOGLE_KEY')
 	response = urllib.request.urlopen(url).read()
 	json_response = json.loads(response)
 	print((type(json_response)))
@@ -159,8 +159,8 @@ def suggest(request, did):
 		pol = police_arr[0]
 		print("Police station not found")
 	message = 'A disaster ' + str(event.name) + ' has struck your locality. Kindly be careful.' + ' Description ' + str(
-		event.description) + ' The nearest hospital is: ' + str(hosp.name) + '  at : ' + str(
-		hosp.vicinity) + ' Nearest Police Station ' + pol.name + ' at : ' + pol.vicinity + '  Thank You'
+		event.description) + '. The nearest hospital: ' + str(hosp.name) + '  at : ' + str(
+		hosp.vicinity) + '. Nearest Police Station: ' + pol.name + ' at : ' + pol.vicinity + '.  Thank You'
 	number = '+919606811718'
 	spontitMsg = 'A disaster ' + str(event.name) + ' has struck your locality. Check your SMS for more details'
 	response = resource.push(spontitMsg)
@@ -169,7 +169,7 @@ def suggest(request, did):
 	print()
 	print(spontitMsg)
 	send_sms(message, number)
-	return render(request, 'suggest.html', {'hosp': hospital_arr, 'pol': police_arr, 'did': did})
+	return render(request, 'suggest.html', {'hosp': hospital_arr, 'pol': police_arr, 'did': did, 'gkey': os.getenv('GOOGLE_KEY')})
 
 	arr = Center.objects.all()
 	arr = arr[1:7]
@@ -252,7 +252,7 @@ def alt_heatmap(request, did):
 		lat.append(center.lat)
 		lng.append(center.lng)
 	cord = list(zip(lat, lng))
-	return render(request, 'heatmap.html', {'cord': cord, 'clat': clat, 'clng': clng})
+	return render(request, 'heatmap.html', {'cord': cord, 'clat': clat, 'clng': clng, 'gkey': os.getenv('GOOGLE_KEY')})
 
 
 def test(request):
@@ -483,7 +483,7 @@ def handle_uploaded_file(f):
 
 def test_suggest(request, did):
 	event = Event.objects.get(id=did)
-	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=4000&types=restaurant&key=AIzaSyCUfaNMoMnCyGQGb_H9AqrkxZPDzR63lM0"
+	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=4000&types=restaurant&key="+os.getenv('GOOGLE_KEY')
 	response = urllib.request.urlopen(url).read()
 	json_response = json.loads(response)
 	print((type(json_response)))
@@ -509,7 +509,7 @@ def test_suggest(request, did):
 		hospital_arr.append(place)
 
 	police_arr = []
-	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=4000&types=cafe&key=AIzaSyCUfaNMoMnCyGQGb_H9AqrkxZPDzR63lM0"
+	url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + event.lat + "," + event.lng + "&radius=4000&types=cafe&key="+os.getenv('GOOGLE_KEY')
 	response = urllib.request.urlopen(url).read()
 	json_response = json.loads(response)
 	print((type(json_response)))

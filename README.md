@@ -78,6 +78,9 @@ A one-stop solution to avoid getting caught in disasters.
 TWILIO_SID=<Add your twilio account SID here>
 TWILIO_TOK=<Add your twilio authentication token here>
 TWILIO_NUM=<Add your twilio phone number here>
+SPONTIT_NAME=<Add your spontit name here>
+SPONTIT_KEY=<Add your spontit key here>
+GOOGLE_KEY=<Add your google maps API here>
 ```
 5. Start the server:
 `python3 manage.py runserver`
