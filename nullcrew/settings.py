@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import django_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -128,3 +129,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = "/static/"
 STATIC_ROOT = "/static/"
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
