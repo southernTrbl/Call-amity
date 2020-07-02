@@ -87,6 +87,15 @@ GOOGLE_KEY=<Add your google maps API here>
 6. Navigate to the site:
 `http://localhost:8000`
 
+Additional commands needed on Debian based OS to avoid errors:
+```
+sudo apt-get install libpq-dev python-dev
+sudo apt install libcurl4-openssl-dev libssl-dev
+sudo apt-get install python python-pip build-essential cmake pkg-config libx11-dev libatlas-base-dev libgtk-3-dev libboost-python-dev -y
+sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev
+libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev
+tcl8.6-dev tk8.6-dev python-tk
+```
 
 # A NullCrew Project
 ![NullCrew](logo.png)
