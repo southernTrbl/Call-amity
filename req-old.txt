@@ -32,7 +32,7 @@ contextlib2==0.5.3
 cryptography==2.8
 cycler==0.10.0
 cytoolz==0.10.1
-dask==0.11.0
+dask==2021.10.0
 datashape==0.5.2
 decorator==4.0.10
 defusedxml==0.6.0
@@ -116,7 +116,7 @@ pep8==1.7.0
 pexpect==4.0.1
 phonenumberslite==8.3.2
 pickleshare==0.7.4
-Pillow==6.2.0
+Pillow==8.3.2
 pkginfo==1.3.2
 ply==3.9
 prometheus-client==0.7.1
