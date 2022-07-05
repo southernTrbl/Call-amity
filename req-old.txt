@@ -38,7 +38,7 @@ decorator==4.0.10
 defusedxml==0.6.0
 dill==0.2.5
 dj-database-url==0.4.1
-Django==1.11.28
+Django==3.2.14
 django-bootstrap==0.2.4
 django-bootstrap3==8.2.1
 django-environ==0.4.5
@@ -90,7 +90,7 @@ llvmlite==0.31.0
 locket==0.2.0
 MarkupSafe==0.23
 matplotlib
-mistune==0.7.3
+mistune==2.0.3
 mpmath==0.19
 multipledispatch==0.4.8
 nbconvert==4.2.0
