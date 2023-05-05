@@ -38,7 +38,7 @@ decorator==4.0.10
 defusedxml==0.6.0
 dill==0.2.5
 dj-database-url==0.4.1
-Django==1.11.28
+Django==3.2.19
 django-bootstrap==0.2.4
 django-bootstrap3==8.2.1
 django-environ==0.4.5
@@ -57,7 +57,7 @@ face-recognition==1.2.3
 face-recognition-models==0.3.0
 fastcache==1.0.2
 filelock==2.0.6
-Flask==0.11.1
+Flask==2.2.5
 Flask-Cors==2.1.2
 funcsigs==1.0.2
 futures==3.0.5
