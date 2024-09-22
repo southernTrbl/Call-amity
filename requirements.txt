@@ -26,7 +26,7 @@ cloudinary==1.6.1
 cloudpickle==0.2.1
 clyent==1.2.1
 colorama==0.3.7
-configobj==5.0.6
+configobj==5.0.9
 configparser==3.5.0
 contextlib2==0.5.3
 cryptography==2.8
