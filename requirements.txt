@@ -58,7 +58,7 @@ face-recognition-models==0.3.0
 fastcache==1.0.2
 filelock==2.0.6
 Flask==0.11.1
-Flask-Cors==2.1.2
+Flask-Cors==6.0.0
 funcsigs==1.0.2
 futures==3.0.5
 goslate==1.5.1
@@ -166,7 +166,7 @@ sqlparse==0.3.0
 terminado==0.8.3
 testpath==0.4.4
 toolz==0.10.0
-tornado==6.0.3
+tornado==6.5
 traitlets==4.3.3
 twilio==6.35.3
 TwitterSearch==1.0.2
