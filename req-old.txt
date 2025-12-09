@@ -38,7 +38,7 @@ decorator==4.0.10
 defusedxml==0.6.0
 dill==0.2.5
 dj-database-url==0.4.1
-Django==1.11.28
+Django==4.2.27
 django-bootstrap==0.2.4
 django-bootstrap3==8.2.1
 django-environ==0.4.5
@@ -159,7 +159,7 @@ six==1.14.0
 sklearn
 spontit
 SQLAlchemy==1.3.13
-sqlparse==0.3.0
+sqlparse==0.5.4
 terminado==0.8.3
 testpath==0.4.4
 toolz==0.10.0
@@ -167,7 +167,7 @@ tornado==6.0.3
 traitlets==4.3.3
 twilio==6.35.3
 TwitterSearch==1.0.2
-urllib3==1.25.8
+urllib3==2.6.0
 wcwidth==0.1.8
 webencodings==0.5.1
 Werkzeug==0.16.1
