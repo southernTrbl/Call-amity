@@ -56,7 +56,7 @@ eth-utils==1.8.4
 face-recognition==1.2.3
 face-recognition-models==0.3.0
 fastcache==1.0.2
-filelock==2.0.6
+filelock==3.20.1
 Flask==0.11.1
 Flask-Cors==2.1.2
 funcsigs==1.0.2
