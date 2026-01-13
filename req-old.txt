@@ -15,7 +15,7 @@ bitarray==0.8.1
 bitcoin==1.1.42
 blaze==0.10.1
 bleach==3.1.1
-bokeh==0.12.2
+bokeh==3.8.2
 boto==2.42.0
 certifi==2019.11.28
 cffi==1.13.2
@@ -56,7 +56,7 @@ eth-utils==1.8.4
 face-recognition==1.2.3
 face-recognition-models==0.3.0
 fastcache==1.0.2
-filelock==2.0.6
+filelock==3.20.3
 Flask==0.11.1
 Flask-Cors==2.1.2
 funcsigs==1.0.2
@@ -167,10 +167,10 @@ tornado==6.0.3
 traitlets==4.3.3
 twilio==6.35.3
 TwitterSearch==1.0.2
-urllib3==1.25.8
+urllib3==2.6.3
 wcwidth==0.1.8
 webencodings==0.5.1
-Werkzeug==0.16.1
+Werkzeug==3.1.5
 widgetsnbextension==3.5.1
 wrapt==1.11.2
 zipp==2.1.0
